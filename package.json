@@ -1,0 +1,12 @@
+{
+  "name": "@browser-extension/utility-storage",
+  "version": "1.0.0",
+  "description": "Browser extension storage utility",
+  "main": "index.ts",
+  "repository": "git@github.com:andwoo/browser-extension-utility-storage.git",
+  "author": "Andrew Manley <andrewlmanley@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webextension-polyfill-ts": "0.12.0"
+  }
+}
