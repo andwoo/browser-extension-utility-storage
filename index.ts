@@ -2,11 +2,11 @@ import { browser } from 'webextension-polyfill-ts';
 
 export interface StorageResponse {
   success: boolean;
-  data: string;
+  data: string | Array<string>;
 }
 
 export const LoadFromStorage = async (key: string): Promise<StorageResponse> => {
-  let data: string;
+  let data: string | Array<string>;
   try {
     const response = await browser.storage.sync.get(key);
     data = response[key];
@@ -19,7 +19,7 @@ export const LoadFromStorage = async (key: string): Promise<StorageResponse> => 
   };
 };
 
-export const SaveToStorage = async (key: string, data: string): Promise<void> => {
+export const SaveToStorage = async (key: string, data: string | Array<string>): Promise<void> => {
   await browser.storage.sync.set({ [key]: data });
 };
 
