@@ -5,7 +5,7 @@ export interface StorageResponse {
   data: string | Array<string>;
 }
 
-export const LoadFromStorage = async (key: string): Promise<StorageResponse> => {
+export const loadFromStorage = async (key: string): Promise<StorageResponse> => {
   let data: string | Array<string>;
   try {
     const response = await browser.storage.sync.get(key);
@@ -19,10 +19,10 @@ export const LoadFromStorage = async (key: string): Promise<StorageResponse> => 
   };
 };
 
-export const SaveToStorage = async (key: string, data: string | Array<string>): Promise<void> => {
+export const saveToStorage = async (key: string, data: string | Array<string>): Promise<void> => {
   await browser.storage.sync.set({ [key]: data });
 };
 
-export const RemoveFromStorage = async (key: string): Promise<void> => {
+export const removeFromStorage = async (key: string): Promise<void> => {
   await browser.storage.sync.remove(key);
 };
